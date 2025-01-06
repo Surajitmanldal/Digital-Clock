@@ -8,9 +8,7 @@ function digital() {
     second = second < 10 ? "0" + second : second;
     minute = minute < 10 ? "0" + minute : minute;
     // it is for 12 hours clock 
-    hour = hour > 12 ? hour - 12 : hour;
-    hour = hour < 10 ? "0" + hour : hour;
-    clock.innerHTML = `${hour}:${minute}:${second}`;
+    clock.innerHTML = `${hour>12 ? "0"+(hour - 12) : hour}:${minute}:${second} ${hour>12?"pm":"am"}`;
 }
 
 setInterval(digital, 1000);
